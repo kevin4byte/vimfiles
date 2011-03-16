@@ -2,6 +2,7 @@
 "added by anfernee
 "add another line by anfernee
 " add new lines for test.
+" add new line by anfernee
 filetype off
 
 "load pathogen managed plugins
