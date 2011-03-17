@@ -1,8 +1,5 @@
 " This is andrew's vimrc file
 "necessary on some Linux distros for pathogen to properly load bundles
-" add coments
-" add 
-" added by figof
 filetype off
 
 "load pathogen managed plugins
