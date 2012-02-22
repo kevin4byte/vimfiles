@@ -1,3 +1,6 @@
+"avoiding annoying CSApprox warning message 
+let g:CSApprox_verbose_level = 0"
+
 " This is andrew's vimrc file
 "necessary on some Linux distros for pathogen to properly load bundles
 filetype off
@@ -105,6 +108,11 @@ set guioptions-=T
 
 "recalculate the trailing whitespace warning when idle, and after saving
 autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
+
+highlight Cursor guifg=white guibg=black
+highlight iCursor guifg=white guibg=steelblue
+
+
 
 "return '[\s]' if trailing white space is detected
 "return '' otherwise
