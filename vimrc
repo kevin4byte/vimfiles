@@ -422,3 +422,12 @@ vmap <D-[> <gv
 vmap <D-]> >gv
 
 let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'}
+
+
+" You could modify this because you may install ctags in non-default path
+let  Tlist_Ctags_Cmd = '/usr/local/bin/ctags' 
+
+
+let Tlist_Show_One_File = 1            
+let Tlist_Exit_OnlyWindow = 1          
+let Tlist_Use_Right_Window = 1         
