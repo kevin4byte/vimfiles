@@ -219,10 +219,20 @@ function! s:Median(nums)
 endfunction
 
 "indent settings
-set shiftwidth=2
-set softtabstop=2
-set expandtab
+set tabstop=2     "what a real tab count for is 8, visually
+set shiftwidth=2  " for << and >>
+set softtabstop=2 " what you got when you hit tab key
+set expandtab     " when hit tab key, output spaces
 set autoindent
+
+" highlighting trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 "folding settings
 set foldmethod=indent   "fold based on indent
@@ -306,7 +316,7 @@ else
         colorscheme railscasts
     else
         "colorscheme default
-        colorscheme desert256 
+        colorscheme desert256
     endif
 endif
 
@@ -425,9 +435,14 @@ let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'}
 
 
 " You could modify this because you may install ctags in non-default path
-let  Tlist_Ctags_Cmd = '/usr/local/bin/ctags' 
+let  Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 
 
-let Tlist_Show_One_File = 1            
-let Tlist_Exit_OnlyWindow = 1          
-let Tlist_Use_Right_Window = 1         
+let Tlist_Show_One_File = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Use_Right_Window = 1
+
+" enable cross-tab copy-paste-cut
+set clipboard+=unnamed
+
+
